@@ -1,0 +1,757 @@
+description: Run 1D Definitions
+database: "admx"
+timestamp_cuts:
+    - why: "example timestamp cut"
+      start_time: 2019-06-05 09:00:00-07
+      stop_time: 2019-06-05 15:56:00-07
+    - why: "hot load measurement"
+      start_time: 2024-01-04 08:43:00-08
+      stop_time: 2024-01-04 16:55:00-08
+    - why: "JPA off"
+      start_time: 2023-12-24 23:00:00-08
+      stop_time: 2023-12-25 18:00:01-08
+    - why: "hard to remove receiver shape residues"
+      start_time: 2024-01-04 16:54:00-08
+      stop_time: 2024-01-05 19:00:00-08
+    - why: "hot load nibble 2"
+      start_time: 2024-01-30 09:00:00-08
+      stop_time: 2024-01-30 17:00:00-08 
+    - why: "wierd std dev increase"
+      start_time: 2024-01-29 15:00:00-08
+      stop_time: 2024-01-29 17:30:00-08
+    - why: "wierd std dev increase"
+      start_time: 2024-01-31 07:00:00-08
+      stop_time: 2024-01-31 09:00:00-08
+    - why: "wierd std dev increase"
+      start_time: 2024-02-01 13:30:00-08
+      stop_time: 2024-02-01 17:00:00-08
+    - why: "wierd std dev increase"
+      start_time: 2024-02-04 21:55:00-08
+      stop_time: 2024-02-04 22:15:00-08:00
+    - why: "wierd std dev increase"
+      start_time: 2024-02-05 14:30:00-08
+      stop_time: 2024-02-05 18:00:00-08
+    - why: "wierd std dev increase"
+      start_time: 2024-02-06 08:40:00-08
+      stop_time: 2024-02-06 12:00:00-08
+    - why: "wierd std dev increase"
+      start_time: 2024-02-07 09:30:00-08
+      stop_time: 2024-02-07 16:00:00-08
+    - why: "wierd std dev increase"
+      start_time: 2024-02-21 08:30:00-08
+      stop_time: 2024-02-21 12:30:00-08
+    - why: "mode lost, bad data"
+      start_time: 2024-02-19 00:00:00-08
+      stop_time: 2024-02-19 08:00:00-08
+    - why: "miscoupled"
+      start_time: 2024-02-20 09:25:00-08
+      stop_time: 2024-02-20 10:25:00-08
+    - why: "bad bg fit"
+      start_time: 2024-02-22 07:00:00-08
+      stop_time: 2024-02-22 14:30:00-08
+    - why: "mode crossing 1 1263599000"
+      start_time: 2024-02-24T01:00:00-08
+      stop_time: 2024-02-24T12:30:00-08
+    - why: "mode crossing 2 1262493000."
+      start_time: 2024-02-25T08:00:00-08
+      stop_time: 2024-02-25T14:00:00-08
+    - why: "loss jpa gain"
+      start_time: 2024-02-27 08:10:00-08
+      stop_time: 2024-02-27 12:13:00-08
+    - why: "bad coupling"
+      start_time: 2024-03-01 11:01:33-08
+      stop_time: 2024-03-01 14:47:00-08
+    - why: "weird std dev increase"
+      start_time: 2024-02-26 07:00:00-08 
+      stop_time: 2024-02-26 10:00:00-08
+    - why: "weird std dev increase, jpa misbehaving"
+      start_time: 2024-03-05 19:00:00-08
+      stop_time: 2024-03-07 11:30:00-08
+    - why: "bad coupling"
+      start_time: 2024-03-11 16:50:00-08
+      stop_time: 2024-03-11 19:00:00-08
+    - why: "rod issues, lost mode"
+      start_time: 2024-03-15 23:59:00-08
+      stop_time: 2024-03-18 13:50:00-08
+    - why: "weird std dev increase"
+      start_time: 2024-03-24 00:30:00-08
+      stop_time: 2024-03-24 09:30:00-08
+    - why: "jpa gain study"
+      start_time: 2024-03-26 10:00:00-07
+      stop_time: 2024-03-26 20:00:00-07
+    - why: "fridge excursion"
+      start_time: 2024-03-30 04:00:00-07
+      stop_time: 2024-03-31 17:00:00-07 
+    - why: "mode crossing"
+      start_time: 2024-05-17T07:00:00-07:00
+      stop_time: 2024-05-18T14:48:00-07:00
+    - why: "digitizer saturated"
+      start_time: 2024-09-03T13:42:00-07:00
+      stop_time: 2024-09-04T15:37:20-07:00
+    - why: "JPA unstable + mode crossing "
+      start_time: 2024-10-18 19:30:00-07
+      stop_time: 2024-10-20 21:35:00-07
+    #- why: "receiver noise"
+    #  start_time: 2024-11-25T03:00:00-08:00
+    #  stop_time: 2024-11-26T21:40:00-08:00
+frequency_cuts: 
+     - why: "example frequency cut"
+       start_time: 2018-03-22 21:35:00-07 #ISO timestamp
+       stop_time: 2018-04-20 11:12:00-07 #ISO timestamp
+       start_frequency: 706198000. #Hz
+       stop_frequency: 706202000. #Hz
+     - why: "mode crossing"
+       start_time: 2024-02-18 21:28:00-08:00
+       stop_time: 2024-03-27 08:30:00-07:00
+       start_frequency: 1263599000.
+       stop_frequency: 1263950000.
+     - why: "mode crossing"
+       start_time: 2024-02-18 21:28:00-08:00
+       stop_time: 2024-03-27 08:30:00-07:00
+       start_frequency: 1262493000.
+       stop_frequency: 1262667000.
+     - why: "mode crossing"
+       start_time: 2024-06-01T00:00:00-07:00
+       stop_time: 2024-08-01T00:00:00-07:00
+       start_frequency: 1217339000.
+       stop_frequency: 1217462000.
+     - why: "mode crossing"
+       start_time: 2024-06-01T00:00:00-07:00
+       stop_time: 2024-08-01T00:00:00-07:00
+       start_frequency: 1216049000.
+       stop_frequency: 1216146000.
+     - why: "secondary SAG on during rescan"
+       start_time: 2024-09-14T13:00:00-07
+       stop_time: 2024-09-16T23:00:00-07
+       start_frequency: 1130500000.0 
+       stop_frequency: 1130700000.0
+     - why: "mode crossing"
+       start_time: 2024-11-10T00:00:00-08
+       stop_time: 2024-11-21T00:00:00-08
+       start_frequency: 1090273000.0
+       stop_frequency: 1090465000.0
+parameter_cuts: #These cut scans based on parameters
+    max_Q: 160000   #Possible, revise if we have very undercoupled regions
+    min_Q: 10000   #Possible, revise if we have very overcoupled regions
+    max_Tsys: 2.0   #K  
+    min_Tsys: 0.45  #K REVISIT after JPA-On HL is finalized
+    max_f0: 1320.0e6 #highest tuning range Hz
+    min_f0: 1020.0e6 #lowest tuning range Hz
+    chi2_trans: 20
+    chi2_refl: 200
+    max_stdev_increase: 1.2 
+parameter_mismeasure_smoothing: #These remove mismeasurements from known noisy sensors
+    max_jpa_snr: 40.0 #dB
+lineshape_parameters:
+    v_halo: 270
+    v_sun: 230
+    v_earth: 29.8
+    v_rot: 0.465
+    parallel: 48 #Seattle is at the 48th parallel
+    alpha: 60
+    psi: 47
+    omega_o: 1.991e-7
+    omega_r: 7.292e-5
+background_fit_excess_signal_removal:
+    excess_power_removal: True
+    n_sigma: 3.5
+    n_bins: 75
+nibbles:
+    common_nibble_info: &DEFAULT
+        fixedUp_receiver: "../../config/run1d_fixUp_receiver_shape.h5"
+        digitization_bin_number: 2000
+        ##for the initial run to extract out baseline oscillation set to False 
+        fix_jpa: True
+        jpa_compressed: False
+        maskbins: {}
+        maskbins_noise: {"2024-01-01 00:00:00 -0800 TO 2024-01-04 23:33:00 -0800" :[[1833,1836],[1952,1953]],
+        "2024-01-04 23:36:00 -0800 TO 2024-01-05 20:08:00 -0800": [[1933,1936]]} 
+        #data_directory: "../../data"
+        #data_directory: "exp/admx/app/users/mguzz28/Run1D"
+        hfet_noise_file_1: "../../config/2023_12_run1d_hfet_noise.txt" ## NEED TO UPDATE
+        hfet_noise_file_2: "../../config/2025_01_run1d_hfet_noise.txt" ## use for data taken after 2024-01-04 16:31:00-08
+        hfet_noise_timestamp: 2024-01-04 16:31:00-08
+        candidate_threshhold_sigma: 4.8 #13.6 # 3.4 #rescan anything with an excursion of this many sigma
+        candidate_threshhold_power: 2.8 #0.85 #rescan anything that measured_power+this_number*sigma > DFSZ power
+        minimum_snr: 1.0 #1.5 #2.6 #0.75 # 3.0
+        cavity_jpa_attenuation_estimate: 0.8 ##dB
+        form_factor_file: "run1d_form_factors.yaml"
+        amplifier_noise_mode: "jpa_run1d"
+        grand_resolution_hz: 100 #Hz
+        bg_fit_type: "sg_ori"
+        #bg_fit_type: "sg" 
+        jpa_gain_sensor: "jpa_gain_2"
+        jpa_snr_sensor: "jpa_snr_2"
+        lineshape: "turner"  # "lentz" 
+        Q_mode: "reflection_q" ## changed on 20/8/2020
+        reflection_key: "JPAon"
+        Q_smoothing_timescale: 900 ##looks like not used run1c-extended
+        coupling_smoothing_timescale: 1800 ##looks like not used run1c-extended
+        background_timestamps: ["2023-12-07 11:57:00-08","2023-12-07 11:54:00-08","2023-12-07 11:52:00-08"] #version as of 1/9/2024
+        #background_timestamps:  #Jan 4 hot load test was 2024-01-04 12:00:00-08 to 2024-01-04 13:05:00-08, but alas there is a peak right in the middle
+        #    start: "2024-01-04 12:00:00-08"
+        #    stop: "2024-01-04 13:05:00-08"
+       
+        #background_timestamps: ["2023-12-07 11:57:00-08","2023-12-07 11:54:00-08","2023-12-07 11:52:00-08","2023-12-07 11:59:00-08","2023-12-07 12:01:00-08","2023-12-07 12:05:00-08","2023-12-07 12:16:00-08","2023-12-07 12:19:00-08","2023-12-07 12:19:00-08"] ### Do we want to update these?
+        candidate_definitions:
+            DFSZ: False
+            SNR_low: True
+            Power_limit_excess: True
+            Three_sigma_excess: True
+    test_nibble_full: #### we will need to update this, just keeping as a placehold for now
+        <<: *DEFAULT
+        file_prefix: "run1d_test_nibble_full"
+        start_time: 2024-03-06 08:00:00-08 
+        stop_time: 2024-03-07 08:00:00-08
+        start_freq: 1250e6 #Hz
+        stop_freq: 1255e6 #Hz
+        fix_jpa: False
+        amplifier_noise_mode: "jpa_run1d"
+        form_factor_name: "symmetric" #this seems right, but want to check      
+        bg_fit_type: "sg_ori"
+        undercoupled_times: {}
+        rescans: {}
+        maskbins: {}
+    nibble1_test: #### we will need to update this, just keeping as a placehold for now
+        <<: *DEFAULT
+        file_prefix: "run1d_nibble1_test"
+        start_time: 2023-12-23 00:00:00-08 
+        stop_time: 2023-12-31 00:00:00+08
+        start_freq: 1290e6 #Hz
+        stop_freq: 1300e6 #Hz
+        fix_jpa: True
+        amplifier_noise_mode: "jpa_run1d"
+        form_factor_name: "symmetric" #this seems right, but want to check      
+        bg_fit_type: "sg_ori"
+        undercoupled_times: {}
+        rescans: {}
+        maskbins: {}
+        #maskbins_noise: {"2022-01-01 00:00:00 -0800 TO 2025-01-04 23:33:00 -0800" :[[0,250],[1750,2000]]}
+        candidate_definitions:
+            DFSZ: True
+            SNR_low: True
+            Power_limit_excess: True
+            Three_sigma_excess: True
+        sag_info: {}
+    nibble1_test2: #### we will need to update this, just keeping as a placehold for now
+        <<: *DEFAULT
+        file_prefix: "run1d_nibble1_test2"
+        fix_jpa: True 
+        fixedUp_receiver: "../../config/run1d_fixUp_receiver_shape_nibble1_test2.h5"
+        start_time: 2023-12-31 00:00:00+08 # UPDATE
+        stop_time: 2024-01-10 00:00:00+08 # UPDATE
+        start_freq: 1298.0e6 #Hz
+        stop_freq: 1300.0e6 #Hz
+        amplifier_noise_mode: "jpa_run1d"
+        form_factor_name: "symmetric" #this seems right, but want to check
+        undercoupled_times: {}
+        rescans: {}
+        maskbins: {}
+        candidate_definitions:
+            DFSZ: False
+            SNR_low: True
+            Power_limit_excess: True
+            Three_sigma_excess: True
+        sag_info: {}
+    nibble1_test3: #### we will need to update this, just keeping as a placehold for now
+        <<: *DEFAULT
+        file_prefix: "run1d_nibble1_test3"
+        fix_jpa: True
+        start_time: 2024-01-10 00:00:00+08 # UPDATE
+        stop_time: 2024-01-23 00:00:00+08 # UPDATE
+        start_freq: 1290.0e6 #Hz
+        stop_freq: 1300.0e6 #Hz
+        amplifier_noise_mode: "jpa_run1d"
+        form_factor_name: "symmetric" #this seems right, but want to check
+        undercoupled_times: {}
+        rescans: {}
+        maskbins: {}
+        candidate_definitions:
+            DFSZ: True
+            SNR_low: True
+            Power_limit_excess: True
+            Three_sigma_excess: True
+        sag_info: {}
+    nibble1: #### we will need to update this, just keeping as a placehold for now
+        <<: *DEFAULT
+        file_prefix: "run1d_nibble1"
+        start_time: 2023-12-23 00:00:00-08 # I think this is a safe nibble start
+        stop_time: 2024-01-23 12:00:00-08 # UPDATE
+        start_time_2: 2024-03-27 12:51:00-07
+        stop_time_2: 2024-04-04 19:03:00-07
+        start_freq: 1290.0e6 #Hz
+        stop_freq: 1300.0e6 #Hz
+        fix_jpa: True
+        jpa_compressed: True
+        jpa_compressed_info:
+            time: [["2024-01-08T00:00:00-08:00","2024-01-15T00:00:00-08:00"]]
+            sensor_use: ["snri_on_res"] ##or "snri_on_res"
+            scale_to_other: [-0.12] # the other is 12% higher
+        reflection_key: "refit"
+        jpa_gain_sensor: "jpa_gain_trans"
+        amplifier_noise_mode: "jpa_run1d"
+        fixedUp_receiver: "../../config/run1d_fixUp_receiver_shape_nibble1.h5"
+        form_factor_name: "symmetric" #this seems right, but want to check      
+        undercoupled_times: {} 
+        rescans:
+          first_pass:
+             start_time: 2024-03-27 12:51:00-07
+             stop_time: 2024-04-04 19:03:00-07
+             why: 'first rescan'       
+        maskbins: {}
+        #maskbins_noise: {"2022-01-01 00:00:00 -0800 TO 2025-01-04 23:33:00 -0800" :[[0,250],[1750,2000]]}
+        candidate_definitions:
+            DFSZ: False
+            SNR_low: True
+            Power_limit_excess: True
+            Three_sigma_excess: True
+        sag_info: {}
+    nibble2: #### we will need to update this, just keeping as a placehold for now
+        <<: *DEFAULT
+        file_prefix: "run1d_nibble2"
+        start_time: 2024-01-24 19:06:18-08 # I think this is a safe nibble start
+        stop_time: 2024-02-19 19:26:00-08 # UPDATE
+        fixedUp_receiver: "../../config/run1d_fixUp_receiver_shape_nibble2.h5"
+        start_freq: 1271.0e6 #Hz
+        stop_freq: 1290.0e6 #Hz
+        amplifier_noise_mode: "jpa_run1d"
+        jpa_gain_sensor: "jpa_gain_2" ##update on Dec 2.,2024 by DZ after checking gain compressions
+        form_factor_name: "symmetric" #this seems right, but want to check
+        undercoupled_times: {}
+        maskbins: {}
+        rescans:
+          first_pass:
+             start_time: 2024-02-14 17:45:00-08
+             stop_time: 2024-02-19 19:26:00-08
+             why: 'first rescan'         
+        #maskbins_noise: {"2022-01-01 00:00:00 -0800 TO 2025-01-04 23:33:00 -0800" :[[0,250],[1750,2000]]}
+        candidate_definitions:
+            DFSZ: False
+            SNR_low: True
+            Power_limit_excess: False
+            Three_sigma_excess: False
+        sag_info: {}
+    nibble2_test: #### we will need to update this, just keeping as a placehold for now
+        <<: *DEFAULT
+        file_prefix: "run1d_nibble2_test"
+        start_time: 2024-01-27 19:00:00-08 # I think this is a safe nibble start
+        stop_time: 2024-02-01 06:00:00-08 # UPDATE
+        start_time_2: 2024-02-03 19:00:00-08 # I think this is a safe nibble start
+        stop_time_2: 2024-02-07 10:00:00-08 # UPDATE
+        start_freq: 1270.0e6 #Hz
+        stop_freq: 1290.0e6 #Hz
+        fix_jpa: True
+        fixedUp_receiver: "../../config/run1d_fixUp_receiver_shape_nibble2_test.h5"
+        amplifier_noise_mode: "jpa_run1d"
+        form_factor_name: "symmetric" #this seems right, but want to check
+        undercoupled_times: {}
+        maskbins: {}
+        rescans: {}
+        maskbins_noise: {"2022-01-01 00:00:00 -0800 TO 2025-01-04 23:33:00 -0800" :[[0,250],[1750,2000]]}
+        candidate_definitions:
+            DFSZ: False
+            SNR_low: True
+            Power_limit_excess: False
+            Three_sigma_excess: False
+        sag_info: {}
+    nibble3: #### we will need to update this, just keeping as a placehold for now
+        <<: *DEFAULT
+        file_prefix: "run1d_nibble3"
+        fix_jpa: True
+        start_time: 2024-02-18 21:28:00-08 # I think this is a safe nibble start
+        stop_time: 2024-03-27 08:30:00-07 # UPDATE
+        start_freq: 1250.0e6 #Hz
+        stop_freq: 1270.8e6 #Hz
+        amplifier_noise_mode: "jpa_run1d"
+        jpa_gain_sensor: "jpa_gain_2" #update on Dec 2.,2024 by DZ after checking gain compressions
+        form_factor_name: "symmetric" #this seems right, but want to check
+        fixedUp_receiver: "../../config/run1d_fixUp_receiver_shape_nibble3.h5"
+        candidate_threshhold_power: 4. ## half KSVZ discoverability
+        undercoupled_times: {}
+        maskbins: {}
+        rescans:
+          first_pass:
+             start_time: 2024-03-20 15:20:00-07
+             stop_time: 2024-03-27 08:30:00-07
+             why: 'first rescan'        
+        candidate_definitions:
+            DFSZ: False
+            SNR_low: False
+            Power_limit_excess: True
+            Three_sigma_excess: True
+        sag_info: {}
+    nibble4: #### we will need to update this, just keeping as a placehold for now
+        <<: *DEFAULT
+        file_prefix: "run1d_nibble4"
+        fix_jpa: True
+        start_time: 2024-04-04 22:55:00-07 # I think this is a safe nibble start
+        stop_time: 2024-04-28 11:00:00-07 # UPDATE
+        start_freq: 1300.0e6 #Hz
+        stop_freq: 1315.0e6 #Hz
+        amplifier_noise_mode: "jpa_run1d"
+        form_factor_name: "symmetric" #this seems right, but want to check
+        fixedUp_receiver: "../../config/run1d_fixUp_receiver_shape_nibble4.h5"
+        undercoupled_times: {}
+        maskbins: {}
+        rescans:
+          first_pass:
+             start_time: 2024-04-24 22:35:00-07
+             stop_time: 2024-04-28 11:00:00-07
+             why: "first rescan"
+        candidate_definitions:
+            DFSZ: False
+            SNR_low: True
+            Power_limit_excess: True
+            Three_sigma_excess: True
+        sag_info: {}
+    nibble5: #### we will need to update this, just keeping as a placehold for now
+        <<: *DEFAULT
+        file_prefix: "run1d_nibble5"
+        fix_jpa: True
+        start_time: 2024-05-06 17:00:00-07 # I think this is a safe nibble start
+        stop_time: 2024-06-05 15:00:00-07 # UPDATE
+        start_freq: 1229.9e6 #Hz
+        stop_freq: 1250.0e6 #Hz
+        candidate_threshhold_power: 4. ## half KSVZ discoverability 
+        amplifier_noise_mode: "jpa_run1d"
+        form_factor_name: "symmetric" #this seems right, but want to check
+        fixedUp_receiver: "../../config/run1d_fixUp_receiver_shape_nibble5.h5"
+        undercoupled_times: {}
+        maskbins: {}
+        rescans: 
+            first_pass: 
+                start_time: 2024-05-31 17:00:00-07
+                stop_time: 2024-06-03 10:00:00-07
+                why: "first rescan"
+            second_pass:
+                start_time: 2024-06-03 12:00:00-07
+                stop_time: 2024-06-05 15:00:00-07
+                why: "second rescan"
+        candidate_definitions:
+            DFSZ: False
+            SNR_low: False
+            Power_limit_excess: True
+            Three_sigma_excess: True
+        sag_info: {}
+    nibble6: 
+        <<: *DEFAULT
+        file_prefix: "run1d_nibble6"
+        fix_jpa: True
+        start_time: 2024-06-05 15:27:00-07 # I think this is a safe nibble start
+        stop_time: 2024-07-21 11:00:00-07 # UPDATE
+        start_freq: 1207.0e6 #Hz
+        stop_freq: 1228.0e6 #Hz
+        candidate_threshhold_power: 4. ## half KSVZ discoverability 
+        amplifier_noise_mode: "jpa_run1d"
+        form_factor_name: "symmetric" #this seems right, but want to check
+        fixedUp_receiver: "../../config/run1d_fixUp_receiver_shape_nibble6.h5"
+        undercoupled_times: {}
+        maskbins: {}
+        rescans:
+            first_pass: 
+                start_time: 2024-07-10 12:00:00-07
+                stop_time: 2024-07-21 20:00:00-07
+                why: "first rescan"
+        candidate_definitions:
+            DFSZ: False
+            SNR_low: False
+            Power_limit_excess: True
+            Three_sigma_excess: True
+        sag_info: 
+            start_time: 2024-06-05 10:00:00-07
+            stop_time: 2024-07-10 12:00:00-07
+            sags:
+                - freq: 1247550000
+                  width: 5000
+                - freq: 1247320000
+                  width: 5000
+                - freq: 1245606000
+                  width: 5000
+    nibble7: 
+        <<: *DEFAULT
+        file_prefix: "run1d_nibble7"
+        fix_jpa: True 
+        start_time: 2024-07-21 10:00:00-07 # I think this is a safe nibble start
+        stop_time: 2024-08-14 11:00:00-07 # UPDATE
+        start_freq: 1188.2e6 #Hz
+        stop_freq: 1205.0e6 #Hz
+        candidate_threshhold_power: 5. ## half KSVZ discoverability 
+        amplifier_noise_mode: "jpa_run1d"
+        form_factor_name: "symmetric" #this seems right, but want to check
+        fixedUp_receiver: "../../config/run1d_fixUp_receiver_shape_nibble7.h5"
+        undercoupled_times: {}
+        maskbins: {}
+        rescans:
+            first_pass: 
+                start_time: 2024-08-09 08:00:00-07
+                stop_time: 2024-08-14 11:00:00-07
+                why: "first rescan"
+        candidate_definitions:
+            DFSZ: False
+            SNR_low: False
+            Power_limit_excess: True
+            Three_sigma_excess: True
+        sag_info:
+            start_time: 2024-07-21 10:00:00-07
+            stop_time: 2024-08-11 11:42:00-07
+            sags:
+                - freq: 1192160000
+                  width: 5000
+                - freq: 1193709600
+                  width: 5000
+    nibble8:
+        <<: *DEFAULT
+        file_prefix: "run1d_nibble8"
+        fix_jpa: True
+        start_time: 2024-08-22 17:01:00-07 # I think this is a safe nibble start
+        stop_time: 2024-09-18 00:00:00-07 # UPDATE
+        start_freq: 1119.0e6 #Hz
+        stop_freq: 1140.0e6 #Hz
+        candidate_threshhold_power: 4. ## half KSVZ discoverability
+        amplifier_noise_mode: "jpa_run1d"
+        form_factor_name: "symmetric" #this seems right, but want to check
+        fixedUp_receiver: "../../config/run1d_fixUp_receiver_shape_nibble8.h5"
+        undercoupled_times: {}
+        maskbins: {}
+        rescans:
+            first_pass:
+                start_time: 2024-09-11 20:00:00-07
+                stop_time: 2024-09-14 13:00:00-07
+                why: "first rescan"
+            second_pass:
+                start_time: 2024-09-14 17:00:00-07
+                stop_time: 2024-09-15 13:00:00-07
+                why: "second rescan"
+            third_pass:
+                start_time: 2024-09-15 13:00:00-07
+                stop_time: 2024-09-15 23:00:00-07
+                why: "take more data for SAGs and one persistent candidate"
+            tm011_pass:
+                start_time: 2024-09-16 12:00:00-07
+                stop_time: 2024-09-16 23:00:00-07
+                why: "tm011 scan of the persistent candidate"
+            final_pass:
+                start_time: 2024-09-17 12:00:00-07
+                stop_time: 2024-09-17 23:00:00-07
+                why: "secondary sag off"
+        candidate_definitions:
+            DFSZ: False
+            SNR_low: False
+            Power_limit_excess: True
+            Three_sigma_excess: True
+        sag_info: 
+            start_time: 2024-08-22 17:01:00-07
+            stop_time: 2024-09-14 13:00:00-07
+            sags:
+                - freq: 1128120000.0
+                  width: 5000
+                - freq: 1130613500.0
+                  width: 5000
+                - freq: 1131860500.0 
+                  width: 5000 
+                - freq: 1138850000.0
+                  width: 5000
+    nibble9:
+        <<: *DEFAULT
+        file_prefix: "run1d_nibble9"
+        fix_jpa: True
+        start_time: 2024-10-16 20:50:00-07 # seems fine for now
+        stop_time: 2024-10-25 00:00:00-07 # UPDATE
+        start_freq: 1168.0e6 #Hz
+        stop_freq: 1172.0e6 #Hz
+        candidate_threshhold_power: 4. ## half KSVZ discoverability
+        amplifier_noise_mode: "jpa_run1d"
+        form_factor_name: "symmetric" #this seems right, but want to check
+        fixedUp_receiver: "../../config/run1d_fixUp_receiver_shape_nibble9.h5"
+        undercoupled_times: {}
+        maskbins: {}
+        rescans:
+            first_pass:
+                start_time: 2024-10-24 10:00:00-07
+                stop_time: 2024-10-24 20:00:00-07
+                why: "first rescan"
+        candidate_definitions:
+            DFSZ: False
+            SNR_low: True
+            Power_limit_excess: True
+            Three_sigma_excess: True
+        sag_info: {} 
+
+    nibble10:
+        <<: *DEFAULT
+        file_prefix: "run1d_nibble10"
+        fix_jpa: True
+        start_time: 2024-10-25 00:00:00-07 # seems fine for now
+        stop_time: 2024-11-03 00:00:00-08 # UPDATE
+        start_freq: 1092.0e6 #Hz
+        stop_freq: 1096.0e6 #Hz
+        candidate_threshhold_power: 4. ## half KSVZ discoverability
+        amplifier_noise_mode: "jpa_run1d"
+        form_factor_name: "symmetric" #this seems right, but want to check
+        fixedUp_receiver: "../../config/run1d_fixUp_receiver_shape_nibble10.h5"
+        undercoupled_times: {}
+        maskbins: {}
+        rescans: 
+            first_pass:
+                start_time: 2024-11-02 10:00:00-07
+                stop_time: 2024-11-02 22:00:00-07
+                why: "first rescan"
+        candidate_definitions:
+            DFSZ: False
+            SNR_low: False
+            Power_limit_excess: True
+            Three_sigma_excess: True
+        sag_info: {} 
+    
+    nibble11:
+        <<: *DEFAULT
+        file_prefix: "run1d_nibble11"
+        fix_jpa: True
+        start_time: 2024-11-03 00:00:00-07 # seems fine for now
+        stop_time: 2024-11-10 20:00:00-08 # UPDATE
+        start_freq: 1165.0e6 #Hz
+        stop_freq: 1168.0e6 #Hz
+        candidate_threshhold_power: 4. ## half KSVZ discoverability
+        amplifier_noise_mode: "jpa_run1d"
+        form_factor_name: "symmetric" #this seems right, but want to check
+        fixedUp_receiver: "../../config/run1d_fixUp_receiver_shape_nibble11.h5"
+        undercoupled_times: {}
+        maskbins: {}
+        rescans: 
+            first_pass:
+                start_time: 2024-11-09 20:00:00-07
+                stop_time: 2024-11-10 08:00:00-07
+                why: "first rescan"
+        candidate_definitions:
+            DFSZ: False
+            SNR_low: False
+            Power_limit_excess: True
+            Three_sigma_excess: True
+        sag_info: {} 
+
+    nibble12:
+        <<: *DEFAULT
+        file_prefix: "run1d_nibble12"
+        fix_jpa: True
+        start_time: 2024-11-10 20:00:00-08 # seems fine for now
+        stop_time: 2024-11-19 19:35:00-08 # UPDATE
+        start_freq: 1088.0e6 #Hz
+        stop_freq: 1092.0e6 #Hz
+        candidate_threshhold_power: 4. ## half KSVZ discoverability
+        amplifier_noise_mode: "jpa_run1d"
+        form_factor_name: "symmetric" #this seems right, but want to check
+        fixedUp_receiver: "../../config/run1d_fixUp_receiver_shape_nibble12.h5"
+        undercoupled_times: {}
+        maskbins: {}
+        rescans:
+            first_pass:
+                start_time: 2024-11-19 08:50:00-08
+                stop_time: 2024-11-19 19:35:00-08
+                why: "first rescan"
+        candidate_definitions:
+            DFSZ: False
+            SNR_low: True
+            Power_limit_excess: True
+            Three_sigma_excess: True
+        sag_info: {}
+        
+    nibble13:
+        <<: *DEFAULT
+        file_prefix: "run1d_nibble13"
+        fix_jpa: True
+        start_time: 2024-11-21 14:00:00-08 # seems fine for now
+        stop_time: 2024-11-25 17:00:00-08 # UPDATE
+        start_freq: 1036.2e6 #Hz
+        stop_freq: 1036.4e6 #Hz
+        candidate_threshhold_power: 4. ## half KSVZ discoverability
+        amplifier_noise_mode: "jpa_run1d"
+        form_factor_name: "symmetric" #this seems right, but want to check
+        fixedUp_receiver: "../../config/run1d_fixUp_receiver_shape_nibble13.h5"
+        undercoupled_times: {}
+        maskbins: {}
+        rescans: {}
+        candidate_definitions:
+            DFSZ: False
+            SNR_low: False
+            Power_limit_excess: True
+            Three_sigma_excess: True
+        sag_info: {}  
+    nibble5_test1:
+        ##4500steps/3cycles
+        <<: *DEFAULT
+        file_prefix: "run1d_nibble5_test1"
+        fix_jpa: True
+        start_time: 2024-05-19 13:56:00-07 # I think this is a safe nibble start
+        stop_time: 2024-05-27 09:10:00-07 # UPDATE
+        start_freq: 1210.0e6 #Hz
+        stop_freq: 1251.0e6 #Hz
+        amplifier_noise_mode: "jpa_run1d"
+        form_factor_name: "symmetric" #this seems right, but want to check
+        fixedUp_receiver: "../../config/run1d_fixUp_receiver_shape_nibble5.h5"
+        undercoupled_times: {}
+        maskbins: {}
+        rescan: {}
+software_synthetics:
+    enhanced_sag_params:
+        spacing: 250000
+        min_number: 200
+        ksvz_power_ratio: 0.5
+    ksvz: &ksvz
+        density_per_MHz: 4
+        ksvz_power_ratio: 1
+        lineshape: turner
+        eavg_hz: 1755
+    dfsz: &dfsz
+        <<: *ksvz
+        ksvz_power_ratio: 0.13774
+    dfsz2x: &dfsz2x
+        <<: *ksvz
+        ksvz_power_ratio: 0.27548
+    dfsz3x: &dfsz3x
+        <<: *ksvz
+        ksvz_power_ratio: 0.41322
+    dfsz3point5x: &dfsz3point5x
+        <<: *ksvz
+        ksvz_power_ratio: 0.48209
+    dfsz4x: &dfsz4x
+        <<: *ksvz
+        ksvz_power_ratio: 0.55096
+    dfsz4p2x: &dfsz4p2x
+        <<: *ksvz
+        ksvz_power_ratio: 0.578508
+    dfsz4p4x: &dfsz4p4x
+        <<: *ksvz
+        ksvz_power_ratio: 0.606056
+    dfsz4p6x: &dfsz4p6x
+        <<: *ksvz
+        ksvz_power_ratio: 0.633604
+    dfsz4p8x: &dfsz4p8x
+        <<: *ksvz
+        ksvz_power_ratio: 0.661152
+    dfsz5x: &dfsz5x
+        <<: *ksvz
+        ksvz_power_ratio: 0.6887
+    dfsz6x: &dfsz6x
+        <<: *ksvz
+        ksvz_power_ratio: 0.82644
+    dfsz7x: &dfsz7x
+        <<: *ksvz
+        ksvz_power_ratio: 0.96418
+    #pade filter function parameters for simulating data
+    pade_filter_params:
+        a: 7.471775120962949
+        b: 8.343718128301207
+        c: 58.75443763724544
+        d: -2.143614792234182
+        e: 0.8548033724806533
+        f: 7.953515398800108
+    #pade filter parameter deviations for simulating data
+    pade_filter_params_dev:
+        a_dev: 2.0
+        b_dev: 4.0
+        c_dev: 20.0
+        d_dev: 0.5
+        e_dev: 1.0
+        f_dev: 3.0
+    #Config value to use simulated data or real data for software synthetics
+    simulate_raw_spectra: False

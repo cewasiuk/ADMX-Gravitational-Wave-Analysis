@@ -1,0 +1,606 @@
+description: Run 1b Definitions
+database: "run1b" 
+database_port: 5433
+timestamp_cuts:
+    - why: "recoupling manually"
+      start_time: 2018-02-05 09:00:00-08
+      stop_time: 2018-02-05 15:56:00-08
+    - why: "recoupling manually"
+      start_time: 2018-02-02 09:51:00-08
+      stop_time: 2018-02-02 15:56:00-08
+    - why: "software malfunction"
+      start_time: 2018-01-29 22:00:00-08
+      stop_time: 2018-01-30 10:52:00-08
+    - why: "snr excursions need better bg fit"
+      start_time: 2018-02-04 0:00:00-08
+      stop_time:  2018-02-05 12:00:00-08
+    - why: "Digitizer crashed"
+      start_time: 2018-02-17 03:50:00-08
+      stop_time:  2018-02-17 09:48:00-08
+    - why: "recoupling manually"
+      start_time: 2018-03-16 10:37:00-07
+      stop_time: 2018-03-16 18:20:00-07
+    - why: "Digitizer crashed"
+      start_time: 2018-03-17 04:00:00-07
+      stop_time: 2018-03-17 12:05:00-07
+    - why: "Digitizer crashed"
+      start_time: 2018-03-19 20:30:00-07
+      stop_time: 2018-03-20 11:30:00-07
+    - why: "noise in scan"
+      start_time: 2018-03-15 15:09:19-05:00
+      stop_time: 2018-03-15 17:59:17-05:00
+    - why: "noise in scan"
+      start_time: 2018-03-15 16:29:15-05:00
+      stop_time: 2018-03-15 19:12:45-05:00
+    - why: "Digitizer crashed"
+      start_time: 2018-03-29 21:12:00-07:00
+      stop_time: 2018-03-30 13:25:00-07:00
+    - why: "Digitizer crashed"
+      start_time: 2018-04-04 05:06:00-07:00
+      stop_time: 2018-04-04 07:20:00-07:00
+    - why: "msa test"
+      start_time:  2018-04-10 11:17:00-07 #ISO timestamp
+      stop_time:  2018-04-10 21:35:00-07 #ISO timestamp
+    - why: "Digitizer crashed"
+      start_time: 2018-04-19 16:30:00-07:00
+      stop_time: 2018-04-19 20:21:00-07:00
+    - why: "Digitizer crashed"
+      start_time: 2018-04-25 02:10:00-07:00
+      stop_time: 2018-04-25 09:25:00-07:00
+    - why: "Severe Antenna Uncoupling"
+      start_time: 2018-07-30 14:41:00-07:00
+      stop_time: 2018-07-30 22:09:00-07:00
+    - why: "JPA Unbiased and mode lost"
+      start_time: 2018-08-10 01:14:00-07:00
+      stop_time: 2018-08-10 14:05:00-07:00
+    - why: "Severe Antenna Uncoupling"
+      start_time: 2018-08-13 15:00:00-07:00
+      stop_time: 2018-08-13 18:07:00-07:00
+    - why: "Unexpected Mode Crossing"
+      start_time: 2018-08-27 02:00:00-07:00
+      stop_time: 2018-08-27 16:00:00-07:00
+    - why: "Mode Lost"
+      start_time: 2018-08-30 10:35:00-07:00
+      stop_time: 2018-08-30 12:30:00-07:00
+    - why: "Mode Lost from JPA unbiased"
+      start_time: 2018-08-30 15:31:00-07:00
+      stop_time: 2018-08-30 16:30:00-07:00
+    - why: "JPA Unbiased and lost mode"
+      start_time: 2018-09-04 08:27:00-07:00
+      stop_time: 2018-09-04 08:43:00-07:00
+    - why: "JPA gain too low, lost mode"
+      start_time: 2018-09-22 03:30:00-07:00 
+      stop_time: 2018-09-22 12:00:00-07:00
+frequency_cuts:  {}
+#    - why: "synthetic candidate"
+#      start_time: 2018-03-22 21:35:00-08 #ISO timestamp
+#      stop_time: 2018-04-20 11:12:00-07 #ISO timestamp
+#      start_frequency: 706.198
+#      stop_frequency: 706.202
+#    - why: "synthetic candidate"
+#      start_time: 2018-03-22 21:35:00-08 #ISO timestamp
+#      stop_time: 2018-04-20 11:12:00-07 #ISO timestamp
+#      start_frequency: 707.198
+#      stop_frequency: 707.204
+#    - why: "synthetic candidate"
+#      start_time: 2018-03-22 21:35:00-08 #ISO timestamp
+#      stop_time: 2018-04-20 11:12:00-07 #ISO timestamp
+#      start_frequency: 710.3487
+#      stop_frequency: 710.35
+#    - why: "synthetic candidate"
+#      start_time: 2018-03-22 21:35:00-08 #ISO timestamp
+#      stop_time: 2018-04-20 11:12:00-07 #ISO timestamp
+#      start_frequency: 711.1990
+#      stop_frequency: 711.1996
+#    - why: "suspected synthetic candidate"
+#      start_time: 2018-03-22 21:35:00-08 #ISO timestamp
+#      stop_time: 2018-04-20 11:12:00-07 #ISO timestamp
+#      start_frequency: 713.589
+#      stop_frequency: 713.595
+#    - why: "suspected synthetic candidate"
+#      start_time: 2018-03-22 21:35:00-08 #ISO timestamp
+#      stop_time: 2018-04-20 11:12:00-07 #ISO timestamp
+#      start_frequency: 714.996
+#      stop_frequency: 715.002
+#    - why: "suspected synthetic candidate"
+#      start_time: 2018-03-22 21:35:00-08 #ISO timestamp
+#      stop_time: 2018-04-20 11:12:00-07 #ISO timestamp
+#      start_frequency: 715.1962
+#      stop_frequency: 715.1968
+#    - why: "confirmed synthetic candidate, Nibble 5"
+#      start_time: 2018-03-22 21:35:00-08 #ISO timestamp
+#      stop_time: 2018-05-29 00:00:00-07 #ISO timestamp
+#      start_frequency: 732.3610
+#      stop_frequency: 732.3620
+#    - why: "confirmed synthetic candidate, Nibble 5"
+#      start_time: 2018-03-22 21:35:00-08 #ISO timestamp
+#      stop_time: 2018-05-29 00:00:00-07 #ISO timestamp
+#      start_frequency: 740.1160
+#      stop_frequency: 740.1170
+#    - why: "suspected synthetic candidate, Nibble 5"
+#      start_time: 2018-03-22 21:35:00-08 #ISO timestamp
+#      stop_time: 2018-05-29 04:00:00-07 #ISO timestamp
+#      start_frequency: 730.194
+#      stop_frequency: 730.197
+#    - why: "confirmed synthetic candidate, Nibble 5"
+#      start_time: 2018-03-22 21:35:00-08 #ISO timestamp
+#      stop_time: 2018-05-29 00:00:00-07 #ISO timestamp
+#      start_frequency: 741.1460
+#      stop_frequency: 741.1470
+#    - why: "confirmed synthetic candidate, Nibble 8" #Is this one bugged?
+#      start_time: 2018-03-22 21:35:00-08 #ISO timestamp
+#      stop_time: 2018-08-23 22:30:00-07 #ISO timestamp
+#      start_frequency: 772.975
+#      stop_frequency: 772.977
+#    - why: "confirmed synthetic candidate, Nibble 8"
+#      start_time: 2018-03-22 21:35:00-08 #ISO timestamp
+#      stop_time: 2018-08-23 21:00:00-07 #ISO timestamp
+#      start_frequency: 773.2515
+#      stop_frequency: 773.2525
+#    - why: "confirmed synthetic candidate, Nibble 8"
+#      start_time: 2018-03-22 21:35:00-08 #ISO timestamp
+#      stop_time: 2018-08-23 21:00:00-07 #ISO timestamp
+#      start_frequency: 776.449
+#      stop_frequency: 776.451
+#    - why: "confirmed synthetic candidate, Nibble 8"
+#      start_time: 2018-03-22 21:35:00-08 #ISO timestamp
+#      stop_time: 2018-08-23 21:00:00-07 #ISO timestamp
+#      start_frequency: 778.4995
+#      stop_frequency: 778.5005
+#    - why: "confirmed synthetic candidate, Nibble 8"
+#      start_time: 2018-03-22 21:35:00-08 #ISO timestamp
+#      stop_time: 2018-08-23 22:30:00-07 #ISO timestamp
+#      start_frequency: 779.4995
+#      stop_frequency: 779.5005
+#    - why: "confirmed synthetic candidate, Nibble 8"
+#      start_time: 2018-03-22 21:35:00-08 #ISO timestamp
+#      stop_time: 2018-08-23 22:30:00-07 #ISO timestamp
+#      start_frequency: 778.7920
+#      stop_frequency: 778.7930
+#    - why: "confirmed synthetic candidate, Nibble 8 super-low power"
+#      start_time: 2018-03-22 21:35:00-08 #ISO timestamp
+#      stop_time: 2018-08-23 21:00:00-07 #ISO timestamp
+#      start_frequency: 772.0283
+#      stop_frequency: 772.0293
+#    - why: "confirmed synthetic candidate, Nibble 10" 
+#      start_time: 2018-09-09 20:51:00-07 
+#      stop_time: 2018-09-19 15:06:00-7
+#      start_frequency: 795.197
+#      stop_frequency: 795.203
+#    - why: "confirmed synthetic candidate, Nibble 10"
+#      start_time: 2018-09-09 20:51:00-07
+#      stop_time: 2018-09-19 15:06:00-7
+#      start_frequency: 796.197
+#      stop_frequency: 796.203
+#    - why: "confirmed synthetic candidate, Nibble 10"
+#      start_time: 2018-09-09 20:51:00-07
+#      stop_time: 2018-09-19 15:06:00-7
+#      start_frequency: 796.391
+#      stop_frequency: 796.397
+#    - why: "confirmed synthetic candidate, Nibble 10"
+#      start_time: 2018-09-09 20:51:00-07
+#      stop_time: 2018-09-19 15:06:00-7
+#      start_frequency: 797.197
+#      stop_frequency: 797.203
+#    - why: "confirmed synthetic candidate, Nibble 10"
+#      start_time: 2018-09-09 20:51:00-07
+#      stop_time: 2018-09-19 15:06:00-7
+#      start_frequency: 798.197
+#      stop_frequency: 798.203
+#    - why: "confirmed synthetic candidate, Nibble 10"
+#      start_time: 2018-09-09 20:51:00-07
+#      stop_time: 2018-09-19 15:06:00-7
+#      start_frequency: 799.197
+#      stop_frequency: 799.203
+parameter_cuts: #These cut scans based on parameters
+    max_Q: 120000   #Possible, revise if we have very undercoupled regions
+    min_Q: 10000   #Possible, revise if we have very overcoupled regions
+    max_Tsys: 2.0   #K  possible, but something is probably wrong if it happpen
+    min_Tsys: 0.10 #0.10  #K  i think physically impossible given current temperatures, revise if sensors read too high
+    max_stdev_increase: 2.0
+parameter_mismeasure_smoothing: #These remove mismeasurements from known noisy sensors
+    max_jpa_snr: 19.5 #19.0 #dB
+active_nibbles: #these are the nibbles that should combine to make a limit
+    - nibble1a
+    - nibble1b
+    - nibble2
+    - nibble3
+    - nibble4
+    - nibble5
+    - nibble6
+    - nibble7
+    - nibble8
+    - nibble9
+    - nibble10
+    - nibble11
+    - nibble12
+    - nibble13
+    - nibble14
+nibbles:
+    common_nibble_info: &DEFAULT
+#data_directory: "../../data"
+#data_directory: "/nashome/g/grybka/admx_analysis_tools/data"
+#        data_directory: "$HOME/admx_analysis_tools/data"
+        data_directory: "hr_data" #"/admx/app/users/$USER/run1b"
+        background_timestamps: ["2018-01-26 12:16:40-08","2018-01-26 12:20:40-08"]
+        Bfield: 7.68
+        candidate_threshhold_sigma: 3.0 #rescan anything with an excursion of this many sigma
+        candidate_threshhold_power: 0.5 #rescan anything that measured_power+this_number*sigma > DFSZ power
+        minimum_snr: 2.4
+        form_factor_file: "form_factors.yaml"
+        hfet_system_noise: 10.0 #Kelvin TODO fix this when measured
+#amplifier_noise_mode: "jpa"
+        amplifier_noise_mode: "jpa_advanced"
+#cavity_jpa_loss_db: 0.78
+        jpa_snr_correction: -0.52
+        jpa_probe_digitization_bandwidth_hz: 48.7e3
+        grand_resolution_hz: 350 #Hz
+        bg_fit_type: "pade"
+#hfet_noise_file: "2018_05_HFETNoiseTemp.yml"
+        hfet_noise_file: "run1b_combined_hfet_noise.yml"
+        phase_slope_transmission: -1.51
+        phase_slope_reflection: -1.54
+    test_nibble:
+        <<: *DEFAULT
+        file_prefix: "test_nibble"
+        start_time: 2018-04-10 21:35:00-08 #ISO timestamp
+        stop_time: 2018-04-11 11:17:00-08 #ISO timestamp
+        start_freq: 704.6 #MHz
+        stop_freq: 716.95 #MHz
+        parameter_file_name: "../../data/run1b_test_nibble_parameters.h5"
+        receiver_shape_file: "../../data/run1b_test_nibble_receiver_shape.h5"
+        spectrum_file_name: "../../data/run1b_test_nibble_spectra.h5"
+        grand_file_name_rescan: "../../data/run1b_test_nibble_grand_rescan.h5"
+        grand_file_name: "../../data/run1b_test_nibble_grand.h5"
+        candidate_file_name: "../../data/run1b_test_nibble_candidates.h5"
+        form_factor_name: "nibble1"
+        undercoupled_times: {}
+        rescans: {}
+    nibble1: &nibble1 #don't run nibble 1, do ribble 1a and nibble 1b separately
+        <<: *DEFAULT
+        file_prefix: "run1b_nibble1"
+        start_time: 2018-01-28 22:10:00-08 #ISO timestamp
+        stop_time: 2018-03-21 12:00:00-08 #ISO timestamp
+        start_freq: 675 #MHz
+        stop_freq: 705 #MHz
+        grand_resolution_hz: 350 #Hz
+        parameter_file_name: "../../data/run1b_nibble1_parameters.h5"
+        receiver_shape_file: "../../data/run1b_nibble1_receiver_shape.h5"
+        spectrum_file_name: "../../data/run1b_nibble1_spectra.h5"
+        grand_file_name: "../../data/run1b_nibble1_grand.h5"
+        candidate_file_name: "../../data/run1b_nibble1_candidates.h5"
+#amplifier_noise_mode: "jpa"
+        hfet_system_noise: 10.0 #Kelvin TODO fix this when measured
+        Bfield: 7.68
+        form_factor_file: "form_factors.yaml"
+        form_factor_name: "nibble1"
+        minimum_snr: 2.4
+        candidate_threshhold_sigma: 3.0 #rescan anything with an excursion of this many sigma
+        candidate_threshhold_power: 0.5 #rescan anything that measured_power+this_number*sigma > DFSZ power
+        undercoupled_times: 
+            - why: "antenna slipped"
+              start_time: 2018-03-08 13:00:00-08
+              stop_time: 2018-03-17 18:20:00-08
+        rescans:  {}
+    nibble1a: 
+        <<: *nibble1
+        file_prefix: "run1b_nibble1a"
+#parameter_file_name: "../../data/run1b_nibble1a_parameters.h5"
+        receiver_shape_file: "../../data/run1b_nibble1a_receiver_shape.h5"
+#spectrum_file_name: "../../data/run1b_nibble1a_spectra.h5"
+#grand_file_name: "../../data/run1b_nibble1a_grand.h5"
+#grand_file_name_rescan: "../../data/run1b_nibble1a_grand_rescan.h5"
+#candidate_file_name: "../../data/run1b_nibble1a_candidates.h5"
+        start_freq: 675 #MHz
+        stop_freq: 688 #MHz
+        rescans: 
+            low_rescan:
+                start_time: 2018-02-22 20:50:00-08 #ISO timestamp
+                stop_time: 2018-03-04 13:00:00-08 #ISO timestamp
+                why: "low rescan"
+    nibble1b: 
+        <<: *nibble1
+        file_prefix: "run1b_nibble1b"
+        start_time: 2018-02-03 00:00:00-08 #ISO timestamp
+#parameter_file_name: "../../data/run1b_nibble1b_parameters.h5"
+#receiver_shape_file: "../../data/run1b_nibble1b_receiver_shape.h5"
+#spectrum_file_name: "../../data/run1b_nibble1b_spectra.h5"
+#grand_file_name: "../../data/run1b_nibble1b_grand.h5"
+#grand_file_name_rescan: "../../data/run1b_nibble1b_grand_rescan.h5"
+#candidate_file_name: "../../data/run1b_nibble1b_candidates.h5"
+        start_freq: 688 #MHz
+        stop_freq: 704.5 #MHz
+        rescans:  
+            my_rescan:
+                start_time: 2018-03-11 15:49:00-07 
+                stop_time: 2018-03-22 10:49:00-07 
+                why: "rescanning candidates"
+    nibble2: &nibble2
+        <<: *DEFAULT
+        file_prefix: "run1b_nibble2"
+        start_time: 2018-03-22 21:35:00-08 #ISO timestamp
+        stop_time: 2018-04-21 22:50:00-07 #ISO timestamp
+        start_freq: 704.6 #MHz
+        stop_freq: 717.00 #MHz
+#stop_freq: 716.95 #MHz
+#parameter_file_name: "../../data/run1b_nibble2_parameters.h5"
+#        receiver_shape_file: "../../data/run1b_nibble2_receiver_shape.h5"
+#        spectrum_file_name: "../../data/run1b_nibble2_spectra.h5"
+#        grand_file_name_rescan: "../../data/run1b_nibble2_grand_rescan.h5"
+#        grand_file_name: "../../data/run1b_nibble2_grand.h5"
+#        candidate_file_name: "../../data/run1b_nibble2_candidates.h5"
+        form_factor_name: "nibble1"
+        undercoupled_times: {}
+        rescans: 
+            first_pass:
+                start_time: 2018-04-12 21:56:00-07
+                stop_time: 2018-04-14 07:49:00-07
+                why: "rescanning candidates below gap" 
+            second_pass:
+                why: "rescanning candidates above gap" 
+                start_time: 2018-04-14 20:10:00-07
+                stop_time: 2018-04-21 22:50:00-07
+    nibble3: &nibble3
+        <<: *DEFAULT
+        file_prefix: "run1b_nibble3"
+        start_time: 2018-04-22 14:42:00-08 #ISO timestamp
+        stop_time: 2018-05-07 00:50:00-07 #ISO timestamp
+#start_freq: 716.96 #MHz
+        start_freq: 716.55 #MHz
+        stop_freq: 726.30 #MHz
+#        parameter_file_name: "../../data/run1b_nibble3_parameters.h5"
+#       receiver_shape_file: "../../data/run1b_nibble3_receiver_shape.h5"
+#        spectrum_file_name: "../../data/run1b_nibble3_spectra.h5"
+#        grand_file_name_rescan: "../../data/run1b_nibble3_grand_rescan.h5"
+#        grand_file_name: "../../data/run1b_nibble3_grand.h5"
+#        candidate_file_name: "../../data/run1b_nibble3_candidates.h5"
+        form_factor_name: "nibble1"
+        undercoupled_times: {}
+        rescans: 
+            first_pass:
+                start_time: 2018-05-05 07:27:00-07
+                stop_time: 2018-05-07 00:40:00-07
+                why: "first rescan " 
+    nibble4: &nibble4
+        <<: *DEFAULT
+        file_prefix: "run1b_nibble4"
+        start_time: 2018-05-07 00:50:00-07 #ISO timestamp
+        stop_time: 2018-05-10 12:00:00-07 #ISO timestamp
+        start_freq: 726.8 #MHz
+        stop_freq: 728.1 #MHz
+#        parameter_file_name: "../../data/run1b_nibble4_parameters.h5"
+        receiver_shape_file: "../../data/run1b_nibble4_receiver_shape.h5"
+#        spectrum_file_name: "../../data/run1b_nibble4_spectra.h5"
+#        grand_file_name_rescan: "../../data/run1b_nibble4_grand_rescan.h5"
+#        grand_file_name: "../../data/run1b_nibble4_grand.h5"
+        form_factor_name: "nibble1"
+        undercoupled_times: {}
+        rescans:
+            first_pass:
+                start_time: 2018-05-09 00:50:00-07 #ISO timestamp
+                stop_time: 2018-05-10 00:50:00-07 #ISO timestamp
+                why: "first rescan"
+        candidate_file_name: "../../data/run1b_nibble4_candidates.h5"
+        form_factor_name: "nibble1"
+        undercoupled_times: {}
+    nibble5: &nibble5
+        <<: *DEFAULT
+        file_prefix: "run1b_nibble5"
+        start_time: 2018-05-10 12:50:00-07 #ISO timestamp
+        stop_time: 2018-06-01 00:50:00-07 #ISO timestamp
+        start_freq: 728.5 #MHz
+        stop_freq: 741.5 #MHz
+#        parameter_file_name: "../../data/run1b_nibble5_parameters.h5"
+        receiver_shape: "run1b_nibble5_receiver_shape.h5"
+        spectrum_file_name: "../../data/run1b_nibble5_spectra.h5"
+#        grand_file_name_rescan: "../../data/run1b_nibble5_grand_rescan.h5"
+#        grand_file_name: "../../data/run1b_nibble5_grand.h5"
+        form_factor_name: "nibble1"
+        undercoupled_times: {}
+        rescans:
+            first_pass:
+                start_time: 2018-05-25 09:10:00-07 #ISO timestamp
+                stop_time: 2018-05-29 04:00:00-07 #ISO timestamp
+                why: "first rescan"
+            second_pass:
+                start_time: 2018-05-29 04:00:00-07 #ISO timestamp
+                stop_time: 2018-06-01 00:50:00-07 #ISO timestamp
+                why: "rescan with candidates off"
+        candidate_file_name: "../../data/run1b_nibble5_candidates.h5"
+    nibble6: &nibble6
+        <<: *DEFAULT
+        file_prefix: "run1b_nibble6"
+        start_time: 2018-05-31 13:57:00-07 #ISO timestamp
+        stop_time: 2018-06-09 00:00:00-07 #ISO timestamp
+        start_freq: 741.2 #MHz
+        stop_freq: 747.5 #MHz
+#        parameter_file_name: "../../data/run1b_nibble6_parameters.h5"
+#        receiver_shape_file: "../../data/run1b_nibble6_receiver_shape.h5"
+#        spectrum_file_name: "../../data/run1b_nibble6_spectra.h5"
+#        grand_file_name_rescan: "../../data/run1b_nibble6_grand_rescan.h5"
+#        grand_file_name: "../../data/run1b_nibble6_grand.h5"
+        form_factor_name: "nibble1"
+        undercoupled_times: {}
+        rescans: {}
+        candidate_file_name: "../../data/run1b_nibble6_candidates.h5"
+    nibble7: &nibble7
+        <<: *DEFAULT
+        file_prefix: "run1b_nibble7"
+        amplifier_noise_mode: "jpa_advanced"
+#cavity_jpa_loss_db: 0.78
+        start_time: 2018-07-23 15:09:00-07 #ISO timestamp
+        stop_time: 2018-08-21 00:50:00-07 #ISO timestamp
+        start_freq: 760.0 #MHz
+        stop_freq: 770.2 #MHz
+        form_factor_name: "nibble1"
+        undercoupled_times: {}
+        rescans:
+            first_pass:
+                start_time: 2018-08-09 19:00:00-07 #ISO timestamp
+                stop_time: 2018-08-12 04:00:00-07 #ISO timestamp
+                why: "first rescan"
+#hfet_noise_file: "2018_07_HFETNoiseTemp.yml"
+    nibble8: &nibble8
+        <<: *DEFAULT
+        file_prefix: "run1b_nibble8"
+        amplifier_noise_mode: "jpa_advanced"
+#cavity_jpa_loss_db: 0.78
+        start_time: 2018-08-12 20:33:00-07 #ISO timestamp
+        stop_time: 2018-08-23 22:00:00-07 #2018-08-25 18:00:00-07 #ISO timestamp
+        start_freq: 770.2 #MHz
+        stop_freq: 780.0 #MHz
+        form_factor_name: "nibble1"
+        undercoupled_times: {}
+        phase_slope_transmission: -1.56
+        phase_slope_reflection: -1.630
+        rescans: 
+            first_pass:
+                start_time: 2018-08-22 23:00:00-07 #ISO timestamp
+                stop_time: 2018-08-25 18:00:00-07 #ISO timestamp
+                why: "first rescan"
+#hfet_noise_file: "2018_07_HFETNoiseTemp.yml"
+    nibble9: &nibble9
+        <<: *DEFAULT
+        file_prefix: "run1b_nibble9"
+        amplifier_noise_mode: "jpa_advanced"
+#cavity_jpa_loss_db: 0.78
+        start_time: 2018-08-25 17:58:00-07 #ISO timestamp
+        stop_time: 2018-09-09 20:50:00-07 #ISO timestamp
+        start_freq: 780.0 #MHz
+        stop_freq: 790.0 #MHz
+        form_factor_name: "nibble1"
+        undercoupled_times: {}
+        rescans:
+            first_pass: 
+                start_time: 2018-09-06 11:08:00-07
+                stop_time: 2018-09-09 20:50:00-07
+                why: "first rescan"
+#hfet_noise_file: "2018_07_HFETNoiseTemp.yml"
+    nibble10: &nibble10
+        <<: *DEFAULT
+        file_prefix: "run1b_nibble10"
+        amplifier_noise_mode: "jpa_advanced"
+#cavity_jpa_loss_db: 0.78 #2.80
+        start_time: 2018-09-09 20:51:00-07 #ISO timestamp
+        stop_time: 2018-09-21 15:10:00-07 #ISO timestamp
+        start_freq: 790 #MHz
+        stop_freq: 800 #MHz
+        form_factor_name: "nibble1"
+        undercoupled_times: {}
+        rescans: 
+            first_pass:
+                start_time: 2018-09-15 20:08:00-07 #2018-09-20 16:49:40-07
+                stop_time: 2018-09-21 15:10:00-07
+                why: "first rescan"
+#hfet_noise_file: "2018_07_HFETNoiseTemp.yml"
+    nibble11: &nibble11
+        <<: *DEFAULT
+        file_prefix: "run1b_nibble11"
+        amplifier_noise_mode: "jpa_advanced"
+#cavity_jpa_loss_db: 0.78 #2.80
+        start_time: 2018-09-21 10:38:00-07 #ISO timestamp
+        stop_time: 2018-09-30 15:10:00-07 #ISO timestamp
+        start_freq: 800 #MHz
+        stop_freq: 810 #MHz
+        form_factor_name: "nibble1"
+        undercoupled_times: {}
+        rescans: {}
+#hfet_noise_file: "2018_07_HFETNoiseTemp.yml"
+    nibble12: &nibble12
+        <<: *DEFAULT
+        file_prefix: "run1b_nibble12"
+        amplifier_noise_mode: "jpa_advanced"
+#cavity_jpa_loss_db: 0.78 #2.80
+        start_time: 2018-09-28 10:38:00-07 #ISO timestamp
+        stop_time: 2018-10-08 12:10:00-07 #ISO timestamp
+        start_freq: 780 #MHz
+        stop_freq: 783 #MHz
+        form_factor_name: "nibble12"
+        undercoupled_times: {}
+        rescans:  #{} 
+            first_pass: 
+                start_time: 2018-09-30 17:42:00-07 #2018-10-03 07:36:00-07 #2018-09-30 17:42:00-07 #2018-09-20 16:49:40-07
+                stop_time: 2018-10-08 12:10:00-07
+                why: "first rescan"
+            #second_pass:
+                #start_time: 2018-10-03 07:36:00-07 #ISO timestamp
+                #stop_time: 2018-10-20 00:50:00-07 #ISO timestamp
+                #why: "second rescan"
+        #hfet_noise_file: "2018_07_HFETNoiseTemp.yml"
+    nibble12_rescans: &nibble12_rescans #This was done to test for a persistent candidate
+        file_prefix: "run1b_nibble12_rescans"
+        amplifier_noise_mode: "jpa_advanced"
+#cavity_jpa_loss_db: 0.78 #2.80
+        start_time: 2018-09-30 17:42:00-07 #ISO timestamp
+        stop_time: 2018-10-08 12:10:00-07 #ISO timestamp
+        start_freq: 780 #MHz
+        stop_freq: 783 #MHz
+        form_factor_name: "nibble12"
+        undercoupled_times: {}
+        rescans: {}
+            #first_pass:
+                #start_time: 2018-10-03 02:30:00-07
+                #stop_time: 2018-10-08 12:10:00-07
+                #why: "first rescan"
+#hfet_noise_file: "2018_07_HFETNoiseTemp.yml"
+    nibble13: &nibble13
+        <<: *DEFAULT
+        file_prefix: "run1b_nibble13"
+        amplifier_noise_mode: "jpa_advanced"
+#cavity_jpa_loss_db: 0.78 #2.80
+        start_time: 2018-10-03 19:38:00-07 #ISO timestamp
+        stop_time: 2018-10-20 12:10:00-07 #ISO timestamp
+        start_freq: 744.3 #MHz
+        stop_freq: 745.5 #MHz
+        form_factor_name: "nibble12"
+        undercoupled_times: {}
+        rescans: 
+            first_pass:
+                start_time: 2018-10-07 04:33:00-07 
+                stop_time: 2018-10-20 12:10:00-07
+                why: "first rescan"
+#hfet_noise_file: "2018_07_HFETNoiseTemp.yml"
+    nibble14: &nibble14
+        <<: *DEFAULT
+        file_prefix: "run1b_nibble14"
+        amplifier_noise_mode: "jpa_advanced"
+#cavity_jpa_loss_db: 0.78 #2.80
+        start_time: 2018-10-07 15:38:00-07 #ISO timestamp
+        stop_time: 2018-10-20 12:10:00-07 #ISO timestamp
+        start_freq: 728 #MHz
+        stop_freq: 728.61 #MHz
+        form_factor_name: "nibble12"
+        undercoupled_times: {}
+        rescans: {}
+        #hfet_noise_file: "2018_07_HFETNoiseTemp.yml"
+software_synthetics:
+    ksvz:
+        density_per_MHz: 20
+        ksvz_power_ratio: 1.0
+        lineshape: "maxboltz"
+        eavg_hz: 344 #270 km/s
+    dfsz:
+        density_per_MHz: 20
+        ksvz_power_ratio: 0.14
+        lineshape: "maxboltz"
+        eavg_hz: 344 #270 km/s
+    dfsz_half:
+        density_per_MHz: 20
+        ksvz_power_ratio: 0.07
+        lineshape: "maxboltz"
+        eavg_hz: 344 #270 km/s
+    no_injections:
+        density_per_MHz: 20
+        ksvz_power_ratio: 0.00001
+        lineshape: "maxboltz"
+        eavg_hz: 344 #270 km/s
+    lentz_half:
+        density_per_MHz: 20
+        ksvz_power_ratio: 0.07
+        lineshape: "lentz"
+        eavg_hz: 344 #270 km/s
+    lentz_quarter:
+        density_per_MHz: 20
+        ksvz_power_ratio: 0.035
+        lineshape: "lentz"
+        eavg_hz: 344 #270 km/s
