@@ -1,0 +1,352 @@
+description: Run 1c Definitions
+database: "admx"
+hostname: "localhost"
+timestamp_cuts:
+    - why: "recoupling manually"
+      start_time: 2019-06-05 09:00:00-08
+      stop_time: 2019-06-05 15:56:00-08
+    - why: "cryogenic bad"
+      start_time: 2019-10-27 06:00:00-07 
+      stop_time: 2019-11-01 17:44:00-08 
+    - why: "noise from motor 2"
+      start_time: 2019-11-15 12:15:00-08 
+      stop_time: 2019-11-15 14:51:00-08 
+    - why: "cryogenic bad"
+      start_time: 2019-11-18 12:45:00-08 
+      stop_time: 2019-11-20 17:44:00-08
+    - why: "Magnet Mistmatch JPA Failure"
+      start_time: 2020-03-26 04:00:00-07
+      stop_time: 2020-05-17 09:30:00-07
+    - why: "Suspiciously high SNRI when NA power was -25dBm"
+      start_time: 2020-09-26 10:12:00-07
+      stop_time: 2020-09-27 10:37:00-07
+    - why: "noises when gain is around 10 dB"
+      start_time: 2021-02-15 11:00:00-08
+      stop_time: 2021-02-16 08:00:00-08
+frequency_cuts: 
+     - why: "synthetic candidate"
+       start_time: 2018-03-22 21:35:00-08 #ISO timestamp
+       stop_time: 2018-04-20 11:12:00-07 #ISO timestamp
+       start_frequency: 706.198
+       stop_frequency: 706.202
+
+     - why: "mode crossing at nibble 8"
+       start_time: 2021-02-12 08:00:00-08
+       stop_time: 2021-02-21 00:00:00-08
+       start_frequency: 949.55e6
+       stop_frequency: 949.65e6
+     - why: "mode crossing at nibble 8"
+       start_time: 2021-02-12 08:00:00-08
+       stop_time: 2021-02-21 00:00:00-08
+       start_frequency: 953.54e6
+       stop_frequency: 953.61e6
+
+parameter_cuts: #These cut scans based on parameters
+    max_Q: 160000   #Possible, revise if we have very undercoupled regions
+    min_Q: 20000   #Possible, revise if we have very overcoupled regions
+    max_Tsys: 20.0   #K  possible, but something is probably wrong if it happpens
+    min_Tsys: 0.10  #K  i think physically impossible given current temperatures, revise if sensors read too high
+    max_f0: 1022.0e6 #highest tuning range Hz
+    min_f0: 750.0e6 #lowest tuning range Hz
+    max_stdev_increase: 10.15
+parameter_mismeasure_smoothing: #These remove mismeasurements from known noisy sensors
+    max_jpa_snr: 40.0 #dB
+lineshape_parameters:
+    v_halo: 270
+    v_sun: 230
+    v_earth: 29.8
+    v_rot: 0.465
+    parallel: 49 #Seattle is at the 49th parallel
+    alpha: 60
+    psi: 47
+    omega_o: 1.991e-7
+    omega_r: 7.292e-5
+nibbles:
+    common_nibble_info: &DEFAULT
+        data_directory: "../../data"
+        candidate_threshhold_sigma: 13.6 # 3.4 #rescan anything with an excursion of this many sigma
+        candidate_threshhold_power: 3.4 #0.85 #rescan anything that measured_power+this_number*sigma > DFSZ power
+        minimum_snr: 0.75 # 3.0
+        form_factor_file: "run1c_form_factors.yaml"
+        amplifier_noise_mode: "jpa_run1c"
+        grand_resolution_hz: 100 #Hz
+        bg_fit_type: "pade+sig"
+        jpa_snr_sensor: "jpa_snr"
+        lineshape: "turner" 
+        Q_mode: "reflection_q" ## changed on 20/8/2020
+        Q_smoothing_timescale: 900
+        coupling_smoothing_timescale: 1800 
+        candidate_definitions:
+            SNR_low: True
+            Power_limit_excess: True
+            Three_sigma_excess: True
+    nibble1: &nibble1
+        <<: *DEFAULT
+        file_prefix: "run1c_nibble1"
+        start_time: 2019-10-16 12:00:00-07
+        #note, there is data before this at a different field!
+        stop_time: 2019-11-27 06:00:00-07 # exact stop time
+        start_freq: 1005.0e6 #Hz
+        stop_freq: 1020.3e6 #Hz
+        noise_measurement_time: 2019-10-25 11:02:52-07 #relevant noise temp measurement
+        form_factor_name: "nibble1"   ## special form factor for nibble 1 and 2, one rod got stuck at the nibbles. 
+        background_timestamps: ["2019-08-29 16:03:00-07","2019-08-29 16:04:00-07","2019-08-29 16:05:00-07","2019-08-29 16:06:00-07","2019-08-29 16:07:00-07","2019-08-29 16:08:00-07"]
+        undercoupled_times: {}
+        rescans: {}
+        maskbins: {}
+    nibble1b: &nibble1b
+        <<: *nibble1
+        file_prefix: "run1c_nibble1b"
+        start_time: 2020-07-24 13:28:00-07
+        stop_time: 2020-08-06 16:36:00-07 # exact stop time
+        noise_measurement_time: 2020-08-20 14:31:43-07 #relevant noise temp measurement
+        form_factor_name: "symmetric"
+        background_timestamps: ["2019-08-29 16:03:00-07","2019-08-29 16:04:00-07","2019-08-29 16:05:00-07","2019-08-29 16:06:00-07","2019-08-29 16:07:00-07","2019-08-29 16:08:00-07"]
+        undercoupled_times: {}
+    nibble1_nibble1b: &nibble1_nibble1b
+        <<: *nibble1
+        file_prefix: "run1c_nibble1_nibble1b"
+    nibble2: &nibble2
+        <<: *DEFAULT
+        file_prefix: "run1c_nibble2"
+        start_time: 2019-11-27 12:00:00-07
+        stop_time: 2019-12-31 06:00:00-07 # exact stop time
+        #stop_time: 2019-10-25 13:45:30.785953-05
+        start_freq: 1000.0e6 #Hz
+        stop_freq: 1005.0e6 #Hz
+        noise_measurement_time: 2019-10-25 11:02:52-07 #relevant noise temp measurement
+        form_factor_name: "nibble1"   ## special form factor for nibble 1 and 2, one rod got stuck at the nibbles. 
+        background_timestamps: ["2019-08-29 16:03:00-07","2019-08-29 16:04:00-07","2019-08-29 16:05:00-07","2019-08-29 16:06:00-07","2019-08-29 16:07:00-07","2019-08-29 16:08:00-07"]
+        undercoupled_times: {}
+        rescans: {}
+        maskbins: {}
+    nibble3: &nibble3
+        <<: *DEFAULT
+        file_prefix: "run1c_nibble3"
+        start_time: 2020-03-11 00:00:00-07
+        stop_time: 2020-04-16 00:00:00-07 # exact stop time
+        # stop_time: 2020-08-16 00:00:00-07 #far in the future
+        start_freq: 994.9e6 #Hz
+        stop_freq: 1005.0e6 #Hz
+        noise_measurement_time: 2020-08-20 14:31:43-07 #relevant noise temp measurement
+        form_factor_name: "symmetric"
+        background_timestamps: ["2019-08-29 16:03:00-07","2019-08-29 16:04:00-07","2019-08-29 16:05:00-07","2019-08-29 16:06:00-07","2019-08-29 16:07:00-07","2019-08-29 16:08:00-07"]
+        undercoupled_times: {}
+        rescans: {}
+        maskbins: {}
+    nibble3b: &nibble3b
+        <<: *nibble3
+        file_prefix: "run1c_nibble3b"
+        start_time: 2020-07-18 00:00:00-07
+        stop_time: 2020-07-24 13:28:00-07 # exact stop time
+    nibble3_nibble3b_nibble2: &nibble3_nibble3b_nibble2  ## Just for running make_candidate_rescans.py for combined grand spectrum
+        <<: *nibble3
+        file_prefix: "run1c_nibble3_nibble3b_nibble2"
+    nibble4: &nibble4
+        <<: *DEFAULT
+        file_prefix: "run1c_nibble4"
+        start_time: 2020-05-17 09:30:00-07
+        stop_time: 2020-07-01 11:29:00-07
+        start_freq: 985.0e6 #Hz
+        stop_freq: 994.9e6 #Hz 
+        noise_measurement_time: 2020-08-20 14:31:43-07 #relevant noise temp measurement
+        form_factor_name: "symmetric"
+        background_timestamps: ["2019-08-29 16:03:00-07","2019-08-29 16:04:00-07","2019-08-29 16:05:00-07","2019-08-29 16:06:00-07","2019-08-29 16:07:00-07","2019-08-29 16:08:00-07"]
+        undercoupled_times: {}
+        #rescans: {}
+        rescans: 
+          first_pass:
+             start_time: 2020-06-28 07:00:00 #2020-06-22 11:02:50 #-07
+             stop_time: 2020-07-20 00:00:00 #-07
+             why: "first rescan"
+          #- why: "candidate rescans"
+          #  start_time: 2020-06-22 11:02:50-07
+          #  stop_time: 2020-07-20 00:00:00-07
+        maskbins: {"2020-05-03 12:00:00 -0500 TO 2020-05-27 13:00:00 -0500":[[85,140],[285,350]]}
+    nibble4b: &nibble4b
+        <<: *nibble4
+        file_prefix: "run1c_nibble4b"
+        start_time: 2020-08-08 08:43:00-07
+        stop_time: 2020-08-10 07:00:00-07 
+        rescans: {}
+        maskbins: {}
+    nibble4_nibble4b: &nibble4_nibble4b
+        <<: *nibble4
+        file_prefix: "run1c_nibble4_nibble4b"
+    nibble5: &nibble5
+        <<: *DEFAULT
+        file_prefix: "run1c_nibble5"
+        start_time: 2020-08-10 00:30:00-07
+        stop_time: 2020-09-14 21:10:00-07
+        start_freq: 975.0e6 #Hz
+        stop_freq: 985.0e6 #Hz 
+        noise_measurement_time: 2020-08-20 14:31:43-07 #relevant noise temp measurement
+        form_factor_name: "symmetric"
+        background_timestamps: ["2019-08-29 16:03:00-07","2019-08-29 16:04:00-07","2019-08-29 16:05:00-07","2019-08-29 16:06:00-07","2019-08-29 16:07:00-07","2019-08-29 16:08:00-07"]
+        undercoupled_times: {}
+        rescans: 
+          first_pass:
+             start_time: 2020-09-13 10:00:00 ## CST without timezone
+             stop_time: 2020-09-14 23:10:00 ## CST without timezone
+             why: "sag off"
+        maskbins: {}
+    nibble6: &nibble6
+        <<: *DEFAULT
+        file_prefix: "run1c_nibble6"
+        start_time: 2020-09-14 21:10:00-07
+        stop_time: 2020-10-16 12:00:00-07
+        start_freq: 965.0e6 #Hz
+        stop_freq: 975.0e6 #Hz 
+        noise_measurement_time: 2020-09-22 09:42:00-07 #relevant noise temp measurement
+        form_factor_name: "symmetric"
+        background_timestamps: ["2019-08-29 16:03:00-07","2019-08-29 16:04:00-07","2019-08-29 16:05:00-07","2019-08-29 16:06:00-07","2019-08-29 16:07:00-07","2019-08-29 16:08:00-07"]
+        undercoupled_times: {}
+        # rescans: {}
+        rescans: 
+          first_pass:
+             start_time: 2020-10-13 09:54:00 ## CST without timezone
+             stop_time: 2020-10-16 14:00:00  ## CST without timezone
+             why: "sag off"
+        maskbins: {}
+    nibble7: &nibble7
+        <<: *DEFAULT
+        file_prefix: "run1c_nibble7"
+        start_time: 2020-10-16 12:00:00-07
+        stop_time: 2020-11-20 12:30:00-07
+        start_freq: 955.0e6 #Hz
+        stop_freq: 965.0e6 #Hz 
+        noise_measurement_time: 2020-09-22 09:42:00-07 #relevant noise temp measurement
+        form_factor_name: "symmetric"
+        background_timestamps: ["2019-08-29 16:03:00-07","2019-08-29 16:04:00-07","2019-08-29 16:05:00-07","2019-08-29 16:06:00-07","2019-08-29 16:07:00-07","2019-08-29 16:08:00-07"]
+        undercoupled_times: {}
+        rescans: {}
+        maskbins: {}
+    nibble8: &nibble8
+        <<: *DEFAULT
+        file_prefix: "run1c_nibble8"
+        start_time: 2021-02-12 08:00:00-08
+        stop_time: 2021-02-21 00:00:00-08
+        start_freq: 945.0e6 #Hz
+        stop_freq: 955.0e6 #Hz 
+        noise_measurement_time: 2021-02-11 15:00:00-08 #relevant noise temp measurement
+        form_factor_name: "symmetric"
+        background_timestamps: ["2021-01-17 14:51:08-08","2021-01-17 14:52:53-08","2021-01-17 14:54:38-08","2021-01-17 14:56:24-08","2021-01-17 14:58:09-08","2021-01-17 14:59:54-08"]
+        undercoupled_times: {}
+        # rescans: {}
+        rescans: 
+          first_pass:
+             start_time: 2021-02-19 11:00:00 #2021-02-19 09:00:00-08 ## NEED TO BE CST WITHOUT TIMEZONE...
+             stop_time: 2021-02-21 02:00:00 #2021-02-21 00:00:00-08 ## NEED TO BE CST WITHOUT TIMEZONE...
+             why: "sag off"
+        maskbins: {}
+    nibble9: &nibble9
+        <<: *DEFAULT
+        file_prefix: "run1c_nibble9"
+        start_time: 2021-02-20 17:30:00-08
+        stop_time: 2021-03-11 21:30:00-08
+        start_freq: 925.0e6 #Hz
+        stop_freq: 945.0e6 #Hz 
+        noise_measurement_time: 2021-02-11 15:00:00-08 #relevant noise temp measurement
+        form_factor_name: "symmetric"
+        background_timestamps: ["2021-01-17 14:51:08-08","2021-01-17 14:52:53-08","2021-01-17 14:54:38-08","2021-01-17 14:56:24-08","2021-01-17 14:58:09-08","2021-01-17 14:59:54-08"]
+        undercoupled_times: {}
+        rescans: 
+          first_pass:
+             start_time: 2021-03-01 22:00:00 #2021-03-01 20:00:00-08 ## NEED TO BE CST WITHOUT TIMEZONE...
+             stop_time: 2021-03-03 02:00:00 #2021-03-03 00:00:00-08 ## NEED TO BE CST WITHOUT TIMEZONE...
+             why: "sag off"
+        maskbins: {}
+    nibble10: &nibble10
+        <<: *DEFAULT
+        file_prefix: "run1c_nibble10"
+        start_time: 2021-03-03 00:33:00-08
+        stop_time: 2021-03-13 21:10:00-08
+        start_freq: 905.0e6 #Hz
+        stop_freq: 925.0e6 #Hz 
+        noise_measurement_time: 2021-02-11 15:00:00-08 #relevant noise temp measurement
+        form_factor_name: "symmetric"
+        background_timestamps: ["2021-01-17 14:51:08-08","2021-01-17 14:52:53-08","2021-01-17 14:54:38-08","2021-01-17 14:56:24-08","2021-01-17 14:58:09-08","2021-01-17 14:59:54-08"]
+        undercoupled_times: {}
+        rescans: 
+          first_pass:
+             start_time: 2021-03-12 15:00:00 #2021-03-12 13:00:00-08 ## NEED TO BE CST WITHOUT TIMEZONE...
+             stop_time: 2021-03-13 23:10:00 #2021-03-13 21:10:00-08 ## NEED TO BE CST WITHOUT TIMEZONE...
+             why: "sag off"
+        maskbins: {}
+    nibble11: &nibble11
+        <<: *DEFAULT
+        file_prefix: "run1c_nibble11"
+        start_time: 2021-03-14 10:00:00-08
+        stop_time: 2021-03-26 07:00:00-07
+        start_freq: 885.0e6 #Hz
+        stop_freq: 905.0e6 #Hz 
+        noise_measurement_time: 2021-02-11 15:00:00-08 #relevant noise temp measurement
+        form_factor_name: "symmetric"
+        background_timestamps: ["2021-01-17 14:51:08-08","2021-01-17 14:52:53-08","2021-01-17 14:54:38-08","2021-01-17 14:56:24-08","2021-01-17 14:58:09-08","2021-01-17 14:59:54-08"]
+        undercoupled_times: {}
+        rescans: 
+          first_pass:
+             start_time: 2021-03-22 17:00:00 #2021-03-22 15:00:00-07 ## NEED TO BE CST WITHOUT TIMEZONE...
+             stop_time: 2021-03-26 09:10:00 #2021-03-26 07:00:00-07 ## NEED TO BE CST WITHOUT TIMEZONE...
+             why: "sag off"
+        maskbins: {}
+    nibble11_tm011: &nibble11_tm011
+        <<: *DEFAULT
+        file_prefix: "run1c_nibble11_tm011"
+        start_time: 2021-03-26 12:41:52-08
+        stop_time: 2021-03-27 09:15:41-08
+        start_freq: 885.0e6 #Hz
+        stop_freq: 905.0e6 #Hz 
+        noise_measurement_time: 2021-02-11 15:00:00-08 #relevant noise temp measurement
+        form_factor_name: "symmetric"
+        background_timestamps: ["2021-01-17 14:51:08-08","2021-01-17 14:52:53-08","2021-01-17 14:54:38-08","2021-01-17 14:56:24-08","2021-01-17 14:58:09-08","2021-01-17 14:59:54-08"]
+        undercoupled_times: {}
+        rescans: 
+          first_pass:
+             start_time: 2021-03-22 17:00:00 #2021-03-22 15:00:00-07 ## NEED TO BE CST WITHOUT TIMEZONE...
+             stop_time: 2021-03-26 09:10:00 #2021-03-26 07:00:00-07 ## NEED TO BE CST WITHOUT TIMEZONE...
+             why: "sag off"
+        maskbins: {}
+    nibble12: &nibble12
+        <<: *DEFAULT
+        file_prefix: "run1c_nibble12"
+        start_time: 2021-03-28 10:30:00-07
+        stop_time: 2021-05-26 07:00:00-07
+        start_freq: 845.0e6 #Hz
+        stop_freq: 885.0e6 #Hz 
+        noise_measurement_time: 2021-02-11 15:00:00-08 #relevant noise temp measurement
+        form_factor_name: "symmetric"
+        background_timestamps: ["2021-01-17 14:51:08-08","2021-01-17 14:52:53-08","2021-01-17 14:54:38-08","2021-01-17 14:56:24-08","2021-01-17 14:58:09-08","2021-01-17 14:59:54-08"]
+        undercoupled_times: {}
+        rescans: {}
+        maskbins: {}
+
+software_synthetics:
+    ksvz: &ksvz
+        density_per_MHz: 10
+        ksvz_power_ratio: 1
+        lineshape: turner
+        eavg_hz: 1755
+    dfsz: &dfsz
+        density_per_MHz: 10
+        ksvz_power_ratio: 0.13774
+        lineshape: turner
+        eavg_hz: 1755
+    #pade filter function parameters for simulating data
+    pade_filter_params:
+        a: 7.471775120962949
+        b: 8.343718128301207
+        c: 58.75443763724544
+        d: -2.143614792234182
+        e: 0.8548033724806533
+        f: 7.953515398800108
+    #pade filter parameter deviations for simulating data
+    pade_filter_params_dev:
+        a_dev: 2.0
+        b_dev: 4.0
+        c_dev: 20.0
+        d_dev: 0.5
+        e_dev: 1.0
+        f_dev: 3.0
+    #Config value to use simulated data or real data for software synthetics
+    simulate_raw_spectra: False
